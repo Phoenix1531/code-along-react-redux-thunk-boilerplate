@@ -1,5 +1,4 @@
 import { React,useState } from 'react'
-import './App.css'
 import { useDispatch, useSelector } from 'react-redux'
 import { fetchData } from './utils/redux/action'
 
@@ -12,11 +11,11 @@ function App() {
         dispatch(fetchData())
       }}>GET DATA</button>
       {users.map((e,i)=>{
-        return <fieldset key={i}>
-          <legend>{e.username}</legend>
+        return <div key={i}>
           <h1>{e.name}</h1>
           <h1>{e.email}</h1>
-        </fieldset>
+          <hr />
+        </div>
       })}
     </>
   )
